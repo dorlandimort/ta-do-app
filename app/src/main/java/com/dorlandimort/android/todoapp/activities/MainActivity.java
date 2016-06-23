@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupUsername() {
-        SharedPreferences sp = this.getApplication().getSharedPreferences("ToDoprefs", 0);
+        SharedPreferences sp = this.getApplication().getSharedPreferences("ToDoPrefs", 0);
         String username = sp.getString("username", null);
         if (username == null) {
             Random r = new Random(100000);
