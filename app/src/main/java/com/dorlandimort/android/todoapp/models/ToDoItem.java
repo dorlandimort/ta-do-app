@@ -9,6 +9,10 @@ public class ToDoItem {
     private String username;
     private boolean completed;
 
+    public ToDoItem() {
+        this.completed = false;
+    }
+
     public String getItem() {
         return item;
     }
