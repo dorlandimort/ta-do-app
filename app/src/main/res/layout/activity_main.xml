@@ -9,8 +9,36 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.dorlandimort.android.todoapp.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewItems"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:scrollbars="vertical"
+        android:layout_above="@+id/txtInputWrapper" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/txtInputWrapper"
+        android:hint="@string/global.hint.add"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/foaAdd"
+        android:layout_toStartOf="@+id/foaAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/inputItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/foaAdd"
+        android:src="@drawable/ic_add"
+        android:layout_alignBottom="@+id/txtInputWrapper"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 </RelativeLayout>
