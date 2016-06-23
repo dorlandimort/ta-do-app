@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "604957939990",
+    "firebase_url": "https://to-do-list-cbf50.firebaseio.com",
+    "project_id": "to-do-list-cbf50",
+    "storage_bucket": "to-do-list-cbf50.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604957939990:android:acc07693d4368486",
+        "android_client_info": {
+          "package_name": "com.dorlandimort.android.todoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "604957939990-6cma4mnnhvr28qg99o3qe370tsgh4767.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDf1845_flZGeHdndKqaKkIeGAUM7pCcCI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
