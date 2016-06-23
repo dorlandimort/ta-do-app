@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ToDoApp</string>
+    <string name="global.hint.add">Agregar un nuevo elemento</string>
+</resources>

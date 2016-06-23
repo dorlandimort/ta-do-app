@@ -12,6 +12,9 @@ import com.dorlandimort.android.todoapp.models.ToDoItem;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -44,7 +47,7 @@ public class ToDoItemsRecyclerAdapter extends FirebaseRecyclerAdapter<ToDoItem, 
             viewHolder.imgDone.setVisibility(View.INVISIBLE);
     }
 
-    class ToDoItemsViewHolder extends RecyclerView.ViewHolder {
+    class ToDoItemsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
 
         @BindView(R.id.txtItem)
         TextView item;
@@ -55,7 +58,30 @@ public class ToDoItemsRecyclerAdapter extends FirebaseRecyclerAdapter<ToDoItem, 
 
         public ToDoItemsViewHolder(View itemView) {
             super(itemView);
+            itemView.setOnClickListener(this);
+            itemView.setOnLongClickListener(this);
             ButterKnife.bind(this, itemView);
+        }
+
+        @Override
+        public void onClick(View view) {
+            int position = getAdapterPosition();
+            ToDoItem currentItem = (ToDoItem) getItem(position);
+            DatabaseReference databaseReference = getRef(position);
+            boolean completed = ! currentItem.isCompleted();
+            currentItem.setCompleted(completed);
+            Map<String, Object> updates = new HashMap<>();
+            updates.put("completed", completed);
+            databaseReference.updateChildren(updates);
+        }
+
+        @Override
+        public boolean onLongClick(View view) {
+            int position = this.getAdapterPosition();
+            ToDoItem currentItem = (ToDoItem) getItem(position);
+            DatabaseReference databaseReference = getRef(position);
+            databaseReference.removeValue();
+            return true;
         }
     }
 }
