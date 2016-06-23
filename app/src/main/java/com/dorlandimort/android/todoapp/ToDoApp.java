@@ -12,12 +12,18 @@ import com.google.firebase.database.FirebaseDatabase;
  */
 public class ToDoApp extends Application {
 
-    private FirebaseDatabase firebaseDatabase;
+    private String FIREBASE_CHILD = "items";
+    private DatabaseReference reference;
 
-    public void r() {
+    @Override
+    public void onCreate() {
+        super.onCreate();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("items");
-        myRef.child("hco").setValue("oeoe");
+        this.reference = database.getReference(FIREBASE_CHILD);
+    }
+
+    public DatabaseReference getReference() {
+        return this.reference;
     }
 
 }
